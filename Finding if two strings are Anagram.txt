@@ -1,0 +1,81 @@
+7) Finding if two strings are Anagram
+
+//DECLARATION
+
+DECLARE c, i, tasc1, tasc2, asc1 : INTEGERS
+DECLARE str1, str2 : STRING
+DECLARE thischar, thischar2, a, b : CHARACTER
+
+//INITIALISATION
+
+c = 1
+i = 1
+tasc1 = 0
+tasc2 = 0
+asc1 = 0
+str1 = " "
+str2 = " "
+thischar = ' '
+thischar2 = ' '
+a = ' '
+b = ' '
+
+//INPUT
+
+INPUT ("Enter statement 1: " , str1)
+INPUT ("Enter statement 2: " , str2)
+
+//CASE NEUTRALISATION
+
+str1 = UCASE (str1)
+str2 = UCASE (str2)
+
+//CONDITION
+
+IF LEN(str1) = LEN(str2)
+  THEN
+
+//LOOP
+
+    FOR i = 1 TO LEN(str1)
+      a = MID(str1, i, 1)
+      tasc1 = tasc1 + ASC(a)
+    NEXT i
+
+//LOOP
+
+    FOR i = 1 TO LEN(str2)
+      b = MID(str2, i, 1)
+      tasc2 = tasc2 + ASC(b)
+    NEXT i
+
+//CONDITION
+
+    IF tasc1 = tasc2
+      THEN
+
+//LOOP
+
+        FOR i = 1 TO LEN(str1)
+          thischar = MID(str1, i, 1)
+          asc1 = ASC(thischar)
+          tasc2 = tasc2 - asc1
+        NEXT i
+
+//CONDITION
+
+    IF tasc2 = 0
+      THEN
+
+//OUTPUT
+
+        OUTPUT("The strings are Anagram.")
+    ENDIF
+
+    ELSE
+      OUTPUT("The strings are not Anagram.")
+    ENDIF
+
+    ELSE
+      OUTPUT ("The strings are not Anagram.")
+ENDIF

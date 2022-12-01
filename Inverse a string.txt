@@ -1,0 +1,29 @@
+5) Inverse a string
+
+//DECLARATION
+
+DECLARE i : INTEGER
+DECLARE Str, Str2 : STRING
+DECLARE thischar : CHARACTER
+
+//INITIALISATION
+
+i = 1
+Str = " "
+Str2 = " "
+thischar = ' '
+
+//INPUT
+  
+INPUT ("Enter the statement: " , Str)
+
+//LOOP
+
+FOR i = 1 TO LEN(Str)
+  thischar = MID(Str, i, 1)
+  Str2 = thischar + Str2
+Next i
+
+//OUTPUT
+
+OUTPUT ("New Statement: " , Str2)

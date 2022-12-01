@@ -1,0 +1,45 @@
+9) Find abbreviation of the given name
+
+//Declaration
+
+DECLARE a, ABB, Str1 : STRING
+DECLARE thischar : CHARACTER
+DECLARE i : INTEGER
+
+//Initialisation
+
+a = " "
+ABB = " "
+Str1 = " "
+thischar = ' '
+i = 0
+
+//Input
+
+INPUT ("Enter the statement: " , Str1)
+
+Str1 = Trim(Str1)
+ABB = ABB + Left(Str1, 1)
+
+//Loop
+
+FOR i = 1 TO Len(Str1)
+
+thischar = MID (Str1, i , 1)
+
+//Condition'
+
+IF thischar = " "
+  THEN
+    ABB = ABB + MID (Str1, i+1, 1)
+ENDIF
+
+Next
+
+// Case Neutralization
+
+a = UCASE (ABB)
+
+//Output
+
+OUTPUT ("Abreviation: " , a)

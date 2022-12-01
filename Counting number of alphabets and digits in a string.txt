@@ -1,0 +1,44 @@
+4) Counting number of alphabets and digits in a string
+
+//Declaration
+
+DECLARE i, a ,b : INTEGER
+DECLARE Str1 : STRING
+DECLARE thischar : CHARACTER
+
+//Initialisation
+
+i = 0
+a = 0
+b = 0
+Str1 = " "
+thischar = ' '
+
+//Input
+INPUT ("Enter the statement: " , Str 1)
+
+//Loop
+
+FOR i = 1 TO Len(Str 1)
+
+thischar = MID(Str 1, i, 1)
+
+//Condition
+
+IF Instr("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM" , thischar) > 0
+  THEN
+    a=a+1
+ELSE
+  IF Instr("1234567890" , thischar) > 0
+    THEN
+      b=b+1
+  ENDIF
+ENDIF
+
+NEXT i
+
+//Output
+
+OUTPUT ("Number of Alphabets: " , a)
+OUTPUT ("Number of Digits: " , b)
+
