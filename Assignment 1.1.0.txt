@@ -1,0 +1,39 @@
+Given a string, if its length is at least 3,
+add 'ing' to its end.
+Unless it already ends in 'ing', in which case
+add 'ly' instead.
+If the string length is less than 3, leave it unchanged.
+Return the resulting string.
+examples:
+input 'end' --> 'ending'
+input 'ending' --> 'endingly'
+input 'go' --> 'go'
+
+//DECLARATION
+
+DECLARE s : STRING
+
+//INITIALISATION
+
+s = " "
+
+//INPUT
+
+INPUT("Enter statement: " , s)
+
+//PROCESS
+
+IF Len(s) >= 3 AND Right(s, 3) = ("ing")
+  THEN
+    s = s + ("ly")
+    OUTPUT("New statement: " , s)
+ELSEIF Len(s) >= 3
+  THEN
+    s = s + ("ing")
+    OUTPUT("New statement: " , s)
+ENDIF
+If < 3
+  Then 
+    OUTPUT s
+Endif
+

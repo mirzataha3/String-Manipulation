@@ -1,0 +1,40 @@
+Replace selected character with another in entered string.
+
+//DECLARATION
+
+DECLARE str1, str2 : STRING
+DECLARE char1, char2, char3 : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISATION
+
+str1 = " "
+str2 = " "
+char1 = ' '
+char2 = ' '
+char3 = ' '
+i = 0
+
+//INPUT
+
+INPUT ("Enter the statement: " , str1)
+INPUT ("Enter character you want to replace: " , char1)
+INPUT ("Enter character you want in place: " , char2)
+
+//LOOP
+
+FOR i = 1 TO LEN(str1)
+  char3 = MID(str1, i, 1)
+
+//CONDITION
+
+  IF char3 <> char1
+    THEN
+      str2 = str2 + char3
+  ELSE
+    str2 = str + char2
+  ENDIF
+NEXT i
+//OUTPUT
+
+OUTPUT ("New statement: " , str2)

@@ -1,0 +1,86 @@
+Find if the input string has all the alphabets; capital or small alike.
+
+//Declaration
+
+Declare b, i, c, z : Integer
+Declare Str : String
+Declare thischar, a : Char
+
+//Initialisation
+
+i = 0
+c = 1
+Str = " "
+thischar = ' '
+a = ' '
+b = 0
+z = 0
+
+//Input
+
+Input("Enter the statement: " , Str)
+        
+//Constant
+
+Constant alpha = "QWERTYUIOPASDFGHJKLZXCVBNM"
+
+//Condition
+
+If Len(Str) >= 26 
+  Then
+
+//Loop
+
+    For i = 1 To 26
+
+        thischar = Mid(alpha, i, 1)
+
+        c = 1
+
+//Loop
+
+        Repeat
+
+//Condition
+
+            If c <= Len(Str) 
+              Then
+                a = Mid(Str, c, 1)
+                a = UCase(a)
+                c = c + 1
+            End If
+
+//Condition
+
+            If thischar = a 
+              Then
+                b = 1
+            End If
+
+        Until b = 1 Or c = Len(Str)
+
+//Condition
+
+        If b = 1 
+          Then
+            z = z + 1
+        Else
+            b = 0
+        End If
+
+    Next i
+
+//Condition
+
+    If z = 26 
+      Then
+        Output("Yes, it is a pangram.")
+    Else
+        Output("No, it is not a pangram.")
+    End If
+
+Else
+
+//Output
+
+    Output("No, it is not a pangram.")

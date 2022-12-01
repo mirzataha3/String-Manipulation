@@ -1,0 +1,38 @@
+Given a string s, return a string
+where all occurences of its first char have
+been changed to '*', except do not change
+the first char itself.
+e.g., 'babble' yields 'ba*le' or 'alpha' outputs 'alph'
+Assume that the string is length 1 or more
+
+//DECLARATION
+
+DECLARE s, s2 : STRING
+DECLARE thischar, firstchar : CHARACTER
+
+//INITIALISATION
+
+s = " "
+s2 = " "
+thischar = ' '
+firstchar = ' '
+
+//INPUT
+
+INPUT("Enter statement: " , s)
+
+//PROCESS
+
+firstchar = Left(s, 1)
+
+FOR i = 1 to LEN(s)
+  thischar = Mid(s, i, 1)
+  IF thischar <> firstchar
+    THEN 
+      s2 = s2 + thischar
+  ELSE
+    s2 = s2 + ("*")
+  ENDIF
+NEXT i
+
+OUTPUT("New statement: " , s2)

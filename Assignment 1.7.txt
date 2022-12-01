@@ -1,0 +1,30 @@
+Input a string s, output a string made of the first 2
+and the last 2 chars of the original string,
+so 'spring' yields 'spng'. However, if the string length
+is less than 2, return string s instead the empty string.
+
+//DECLARATION
+
+DECLARE s, a, b : STRING
+
+//INITIALISATION
+
+s = " "
+a = " "
+b = " "
+
+//INPUT
+ 
+INPUT("Enter statement 1: " , s)
+
+//PROCESS
+
+a = LEFT(s, 2)
+b = Right(s, 2)
+
+IF Len(s) < 2
+  THEN
+    OUTPUT s
+ELSE
+  OUTPUT("New statement: " , a, b)
+ENDIF

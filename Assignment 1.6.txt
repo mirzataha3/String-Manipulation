@@ -1,0 +1,23 @@
+INPUT an INT count of a number of donuts, OUTPUT a string
+of the form 'Number of donuts: <count>', where <count> is the number
+input. However, if the count is 10 or more, then use the word 'many'
+instead of the actual count.
+So donuts(5) outputs 'Number of donuts: 5'
+and donuts(23) outputs 'Number of donuts: many'
+
+//DECLARATION
+
+DECLARE ND : INTEGER
+
+//INITIALISATION
+
+ND = 0
+
+INPUT("Enter number of donuts: " , ND)
+
+IF ND >= 10 
+  THEN
+    OUTPUT("Number of donuts: Many")
+ELSE
+  OUTPUT("Numner of donuts: " , ND)
+ENDIF

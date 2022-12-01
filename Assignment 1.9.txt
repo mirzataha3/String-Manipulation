@@ -1,0 +1,43 @@
+Given strings a and b, return a single string with a and b separated
+by a space '<a> <b>', except swap the first 2 chars of each string.
+e.g.
+  'mix', pod' -> 'pox mid'
+  'dog', 'dinner' -> 'dig donner'
+  Assume a and b are length 2 or more.
+
+//DECLARATION
+
+DECLARE a, b, str1, str2 : STRING
+DECLARE thischar : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISATION
+
+a = " "
+b = " "
+str1 = " "
+str2 = " "
+thischar = ' '
+i = 3
+
+//INPUT 
+
+INPUT("Enter statement 1: " , str1)
+INPUT("Enter statement 2: " , str2)
+
+//PROCESS
+
+a = Left(str1, 2)
+b = Left(str2, 2)
+
+FOR i = 3 TO LEN(str1)
+  thischar = MID(str1, i, 1)
+  b = b + thischar
+NEXT i
+
+FOR i = 3 TO LEN(str2)
+  thischar = MID(str2, i, 1)
+  a = a + thischar
+NEXT i
+
+OUTPUT("New statement: " , b, " ", a)
