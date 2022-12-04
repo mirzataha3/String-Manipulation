@@ -1,0 +1,45 @@
+Find the character that appears most number of times
+in an entered string and output it.
+
+//DECLARATION
+
+DECLARE i, c, a, max : INTEGER
+DECLARE thischar, thischar2, b : CHARACTER
+DECLARE s : STRING
+
+//INITIALISATION
+
+i = 1
+c = 1
+a = 0
+max = 0
+thischar = ' '
+thischar2 = ' '
+b = ' '
+s = " "
+
+//INPUT
+
+INPUT("Enter the statement: " , s)
+
+//PROCESS
+
+FOR i = 1 TO LEN(s)
+  thischar = MID(s, i, 1)
+  FOR c = 1 TO LEN(s)
+    thischar2 = MID(s, c, 1)
+    IF thischar = thischar2
+      THEN
+        a = a + 1
+    ENDIF
+  NEXT c
+  IF a > max
+    THEN
+      max = a
+      b = thischar
+  ENDIF
+NEXT i
+
+//OUTPUT
+
+OUTPUT("Most repeated character is: " , b")

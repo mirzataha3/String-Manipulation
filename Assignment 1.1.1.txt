@@ -1,0 +1,43 @@
+Given a string, find the first appearanceof the substring 'not' and 'bad'. 
+If the 'bad' follows the 'not', replace the whole 'not'...'bad' substring
+with 'good'. Return the resulting string.
+Input the resulting string.
+Input: 'This is not that bad!'
+Output: This dinner is good
+
+//DECLARATION
+
+DECLARE s, first, last : STRING
+DECLARE a, b, i : INTEGER
+DECLARE thischar : CHARACTER
+
+//INITIALISATION
+
+s = " "
+first = " "
+last = " "
+a = 0
+b = 0
+i = 0
+thischar = ' '
+
+//INPUT
+
+Input("Enter the statement: " , s)
+
+//PROCESS
+
+a = LOCATE(s, "not")
+b = LOCATE(s, "bad")
+
+FOR i = 1 TO (a - 1)
+  thischar = MID(s, i, 1)
+  first = first + thischar
+NEXT
+
+FOR i = (b + 3) TO LEN(s)
+  thischar = MID(s, i, 1)
+  last = last + thischar
+NEXT
+
+Output("New statement: " , first , "good" , last)
